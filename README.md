@@ -1,4 +1,30 @@
 # REPORT 1
+![image1](https://user-images.githubusercontent.com/74639473/99750706-760f0180-2b13-11eb-8e90-d512a2136c35.png)
+![image2](https://user-images.githubusercontent.com/74639473/99750733-7effd300-2b13-11eb-9c51-14dff14c4c7c.png)
+![image3](https://user-images.githubusercontent.com/74639473/99750737-81622d00-2b13-11eb-9801-9a5a10ed2b66.png)
+![image4](https://user-images.githubusercontent.com/74639473/99750746-832bf080-2b13-11eb-97f5-6d2fceb40db8.png)
+![image5](https://user-images.githubusercontent.com/74639473/99750791-96d75700-2b13-11eb-89f1-ea47dfaeaf5c.png)
+![image6](https://user-images.githubusercontent.com/74639473/99750798-98a11a80-2b13-11eb-8892-f634d285dc33.png)
+![image7](https://user-images.githubusercontent.com/74639473/99750800-9a6ade00-2b13-11eb-922c-7c05bf714f49.png)
+![image8](https://user-images.githubusercontent.com/74639473/99750805-9c34a180-2b13-11eb-8adc-e4ac56e1c284.png)
+![image9](https://user-images.githubusercontent.com/74639473/99750811-9dfe6500-2b13-11eb-8560-eff988829143.png)
+![image10](https://user-images.githubusercontent.com/74639473/99750815-9fc82880-2b13-11eb-9986-a7687aef9989.png)
+![image11](https://user-images.githubusercontent.com/74639473/99750841-ace51780-2b13-11eb-84e4-a7f2959bf371.png)
+![image12](https://user-images.githubusercontent.com/74639473/99750851-b0789e80-2b13-11eb-934c-b63466f6d2bf.png)
+![image13](https://user-images.githubusercontent.com/74639473/99750854-b40c2580-2b13-11eb-9959-57448361442d.png)
+![image14](https://user-images.githubusercontent.com/74639473/99750857-b53d5280-2b13-11eb-9025-1007d6469267.png)
+![image15](https://user-images.githubusercontent.com/74639473/99750858-b7071600-2b13-11eb-8f33-be06b6fd50f7.png)
+![image16](https://user-images.githubusercontent.com/74639473/99750863-b9697000-2b13-11eb-8cba-7c63d7058c37.png)
+![image17](https://user-images.githubusercontent.com/74639473/99750878-bec6ba80-2b13-11eb-991b-688724b06f98.png)
+![image18](https://user-images.githubusercontent.com/74639473/99750887-c0907e00-2b13-11eb-8750-b45036a30cc0.png)
+![image19](https://user-images.githubusercontent.com/74639473/99750892-c38b6e80-2b13-11eb-99a7-210bea4fd599.png)
+![image20](https://user-images.githubusercontent.com/74639473/99750899-c5553200-2b13-11eb-88d0-113164afadbc.png)
+![image21](https://user-images.githubusercontent.com/74639473/99750908-ca19e600-2b13-11eb-9bf9-7384587396f6.png)
+![image22](https://user-images.githubusercontent.com/74639473/99750912-cbe3a980-2b13-11eb-89bc-dba5ffe3959b.png)
+![image23](https://user-images.githubusercontent.com/74639473/99750917-cf773080-2b13-11eb-9225-649a07c11f9e.png)
+![image24](https://user-images.githubusercontent.com/74639473/99750921-d1d98a80-2b13-11eb-8f83-5be3d15799ec.png)
+![image25](https://user-images.githubusercontent.com/74639473/99750924-d30ab780-2b13-11eb-98cc-e721ac1f5372.png)
+![image26](https://user-images.githubusercontent.com/74639473/99750928-d4d47b00-2b13-11eb-8429-6f699507ec8b.png)
 
 # 1.1. FILE SYSTEM CONFIGURATION
 
@@ -12,7 +38,7 @@ File system được dùng để quản lý các dữ liệu được đọc và
 
 	Filesystem mục đích đặc biệt: procfs, sysfs, tmpfs, squashfs, debugfs,…
 
-<img src="https://user-images.githubusercontent.com/74639473/99750533-26c8d100-2b13-11eb-8b66-e1e11e316eb5.jpg" alt="pub" width="250" />
+<img src="https://user-images.githubusercontent.com/74639473/99750706-760f0180-2b13-11eb-8e90-d512a2136c35.png" alt="pub" width="250" />
 
 --- Thư mục
 
@@ -93,7 +119,7 @@ Chức năng
 
 #  add disk và cấu hình LVM
 -cấu trúc LVM
-
+<img src=" alt="" width="250" />
 cài đặt LVM:
 add đĩa vào máy  ảo Centos
 
