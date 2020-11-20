@@ -12,7 +12,7 @@ File system được dùng để quản lý các dữ liệu được đọc và
 
 	Filesystem mục đích đặc biệt: procfs, sysfs, tmpfs, squashfs, debugfs,…
 
-<img src="https://github.com/bac123abc/-Lunux/issues/2#issue-747078685" alt="pub" width="250" />
+<img src="https://user-images.githubusercontent.com/74639473/99750533-26c8d100-2b13-11eb-8b66-e1e11e316eb5.jpg" alt="pub" width="250" />
 
 --- Thư mục
 
