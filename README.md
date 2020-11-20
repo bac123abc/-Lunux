@@ -29,23 +29,14 @@ File system được dùng để quản lý các dữ liệu được đọc và
  Thư mục |  Chức năng |
  ------- | ---------- |
 /bin | Các chương trình cơ bản|
-
-	/boot|Chứa nhân Linux để khởi động và các file system maps cũng như các file khởi động giai đoạn hai.
-	/dev | Chứa các tập tin thiết bị (CD Rom, HDD, FDD….).
-	/etc |  Chứa các tập tin cấu hình hệ thống.
-	/home Thư mục dành cho người dùng khác root.
-
-	/lib
-	Chứa các thư viện dùng chung cho các lệnh nằm trong /bin và /sbin. Và thư mục này cũng chứa các module của kernel.
-
-	/mnt hoặc /media
-	Mount point mặc định cho những hệ thống file kết nối bên ngoài.
-
-	/opt
-	Thư mục chứa các phần mềm cài thêm.
-
-	/sbin
-	Các chương trình hệ thống
+/boot|Chứa nhân Linux để khởi động và các file system maps cũng như các file khởi động giai đoạn hai.|
+/dev | Chứa các tập tin thiết bị (CD Rom, HDD, FDD….).|
+/etc |  Chứa các tập tin cấu hình hệ thống.|
+/home |Thư mục dành cho người dùng khác root.|
+/lib | Chứa các thư viện dùng chung cho các lệnh nằm trong /bin và /sbin. Và thư mục này cũng chứa các module của kernel.|
+/mnt hoặc /media |Mount point mặc định cho những hệ thống file kết nối bên ngoài.|
+/opt |Thư mục chứa các phần mềm cài thêm.
+/sbin |Các chương trình hệ thống
 
 	/srv
 	Dữ liệu được sử dụng bởi các máy chủ lưu trữ trên hệ thống.
