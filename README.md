@@ -12,7 +12,8 @@ File system được dùng để quản lý các dữ liệu được đọc và
 
 	Filesystem mục đích đặc biệt: procfs, sysfs, tmpfs, squashfs, debugfs,…
 
-<img src="https://..." alt="..." width="250" />
+<img src="file:///C:/Users/ADMIN/AppData/Local/Temp/Rar$EXa12696.20292/images/image9.png
+file:///C:/Users/ADMIN/AppData/Local/Temp/Rar$EXa12696.20292/images/image15.png" alt="" width="250" />
 
 --- Thư mục
 
