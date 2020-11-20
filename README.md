@@ -26,17 +26,13 @@ File system được dùng để quản lý các dữ liệu được đọc và
 	Filesystem mục đích đặc biệt: procfs, sysfs, tmpfs, squashfs, debugfs,…
 
 
---- Thư mục
+ Thư mục |  Chức năng |
+ ------- | ---------- |
+/bin | Các chương trình cơ bản|
 
-Chức năng
-
-	/bin Các chương trình cơ bản
-
-	/boot Chứa nhân Linux để khởi động và các file system maps cũng như các file khởi động giai đoạn hai.
-	/dev
-	Chứa các tập tin thiết bị (CD Rom, HDD, FDD….).
-	/etc
-	Chứa các tập tin cấu hình hệ thống.
+	/boot|Chứa nhân Linux để khởi động và các file system maps cũng như các file khởi động giai đoạn hai.
+	/dev | Chứa các tập tin thiết bị (CD Rom, HDD, FDD….).
+	/etc |  Chứa các tập tin cấu hình hệ thống.
 	/home Thư mục dành cho người dùng khác root.
 
 	/lib
