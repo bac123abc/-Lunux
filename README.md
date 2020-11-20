@@ -1,14 +1,5 @@
 # REPORT 1
 
-![image6](https://user-images.githubusercontent.com/74639473/99750798-98a11a80-2b13-11eb-8892-f634d285dc33.png)
-![image7](https://user-images.githubusercontent.com/74639473/99750800-9a6ade00-2b13-11eb-922c-7c05bf714f49.png)
-![image8](https://user-images.githubusercontent.com/74639473/99750805-9c34a180-2b13-11eb-8adc-e4ac56e1c284.png)
-![image9](https://user-images.githubusercontent.com/74639473/99750811-9dfe6500-2b13-11eb-8560-eff988829143.png)
-![image10](https://user-images.githubusercontent.com/74639473/99750815-9fc82880-2b13-11eb-9986-a7687aef9989.png)
-![image11](https://user-images.githubusercontent.com/74639473/99750841-ace51780-2b13-11eb-84e4-a7f2959bf371.png)
-![image12](https://user-images.githubusercontent.com/74639473/99750851-b0789e80-2b13-11eb-934c-b63466f6d2bf.png)
-![image13](https://user-images.githubusercontent.com/74639473/99750854-b40c2580-2b13-11eb-9959-57448361442d.png)
-![image14](https://user-images.githubusercontent.com/74639473/99750857-b53d5280-2b13-11eb-9025-1007d6469267.png)
 ![image15](https://user-images.githubusercontent.com/74639473/99750858-b7071600-2b13-11eb-8f33-be06b6fd50f7.png)
 ![image16](https://user-images.githubusercontent.com/74639473/99750863-b9697000-2b13-11eb-8cba-7c63d7058c37.png)
 ![image17](https://user-images.githubusercontent.com/74639473/99750878-bec6ba80-2b13-11eb-991b-688724b06f98.png)
@@ -34,7 +25,6 @@ File system được dùng để quản lý các dữ liệu được đọc và
 
 	Filesystem mục đích đặc biệt: procfs, sysfs, tmpfs, squashfs, debugfs,…
 
-<img src="https://user-images.githubusercontent.com/74639473/99750706-760f0180-2b13-11eb-8e90-d512a2136c35.png" alt="pub" width="250" />
 
 --- Thư mục
 
@@ -130,10 +120,13 @@ xem máy ảo đã nhận disk chưa : lsblk
 
 Tạo các partition cho các ổ mới , bắt đầu từ sdb với lệnh :fdisk /dev/sdb
 
+![image4](https://user-images.githubusercontent.com/74639473/99750746-832bf080-2b13-11eb-97f5-6d2fceb40db8.png)
 
 	Tạo Physical Volume :pvcreate /dev/sdb1
 	tạo Volume Group :vgcreate vg-demo1 /dev/sdb1 /dev/sdc1
 	tạo logical Volume: lvcreate -L 1G -n lv-demo1 vg-demo1
+	
+	![image5](https://user-images.githubusercontent.com/74639473/99750791-96d75700-2b13-11eb-89f1-ea47dfaeaf5c.png)
 
 
 # 1.2. USER ACCOUNT MANAGEMENT
@@ -141,14 +134,21 @@ Files used in creating a user
 	tập tin /etc/passwd:  là csdl các tài khoản người dùng trên Linux dưới dạng văn bản: xem thông tin file /etc/passwd : cat /etc/passwd
 	tập tin /etc/shadow: là nơi lưu trữ mật khẩu đã được mã hóa.xem thông tin file /etc/shadow là cat /etc/shadow
 	tập tin /etc/group là nơi lưu thông tin các nhóm
+	
 	-tạo người dùng và mật khẩu: 
+	
+![image6](https://user-images.githubusercontent.com/74639473/99750798-98a11a80-2b13-11eb-8892-f634d285dc33.png)
 
 	tạo Group: groupadd  group
+	
+![image7](https://user-images.githubusercontent.com/74639473/99750800-9a6ade00-2b13-11eb-922c-7c05bf714f49.png)
 
 	add user vào group : usermod - g group user
-
+	
+![image8](https://user-images.githubusercontent.com/74639473/99750805-9c34a180-2b13-11eb-8adc-e4ac56e1c284.png)
 	chown ,chmod 
 
+![image9](https://user-images.githubusercontent.com/74639473/99750811-9dfe6500-2b13-11eb-8560-eff988829143.png)
 
 Lenh sudo 
 	cho phép một số user được định nghĩa trong file cấu hình /etc/sudoers có thể chạy một số câu lệnh xác định với quyền hạn root hoặc với quyền hạn của một user khác. khi sử dụng sudo thì yêu cầu nhập password trước khi thực hiện. các lệnh sudo sẽ ghi log lại trong file var/log/messages
@@ -156,6 +156,8 @@ Lenh sudo
 # 1.3. PACKAGE MANAGEMENT
 # Xem cu phap lenh rpm: man rpm
 cài đặt gói: rpm -ivh <tap tin.rpm>
+	
+![image10](https://user-images.githubusercontent.com/74639473/99750815-9fc82880-2b13-11eb-9986-a7687aef9989.png)
 	
 thông tin  tập tin của 1 gói: rpm -qpl <tập tin rpm>
 
@@ -174,7 +176,13 @@ cho biết tập tin thuộc gói nào : rpm -qf <tập tin>
 Sử dụng yum để cài đặt gói
 	cài đặt gói mc
 
+![image11](https://user-images.githubusercontent.com/74639473/99750841-ace51780-2b13-11eb-84e4-a7f2959bf371.png)
+![image12](https://user-images.githubusercontent.com/74639473/99750851-b0789e80-2b13-11eb-934c-b63466f6d2bf.png)
+
 	xem thông tin gói mc
+	
+![image13](https://user-images.githubusercontent.com/74639473/99750854-b40c2580-2b13-11eb-9959-57448361442d.png)
+![image14](https://user-images.githubusercontent.com/74639473/99750857-b53d5280-2b13-11eb-9025-1007d6469267.png)
 
 	xem một số thông tin 
 
