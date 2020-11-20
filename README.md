@@ -1,14 +1,18 @@
-REPORT 1
+#REPORT 1
 
 #1.1. FILE SYSTEM CONFIGURATION
 
 File system được dùng để quản lý các dữ liệu được đọc và lưu trên thiết bị.File system cho phép người dùng truy cập nhanh chóng và an toàn khi cần thiết.Các loại file system
+
 Filesystem cơ bản: EXT2, EXT3, EXT4, XFS, Btrfs, JFS, NTFS,…
+
 Filesystem dành cho dạng lưu trữ Flash: thẻ nhớ,…
+
 Filesystem dành cho hệ cơ sở dữ liệu
+
 Filesystem mục đích đặc biệt: procfs, sysfs, tmpfs, squashfs, debugfs,…
 
-Thư mục
+---Thư mục
 Chức năng
 
 /bin Các chương trình cơ bản
@@ -63,18 +67,28 @@ cat /etc/redhat-release hiển thị phiên bản Centos
 uname -a hiển thị các thông tin về kernel
 
 free -m hiển thị lượng RAM còn trống
+
 df -h hiển thị thông tin những file hệ thống nơi mỗi file thường trú hoặc tất cả những file mặc định và lệnh này có thể xem được dung lượng ổ cứng đã sử dụng và còn trống bao nhiêu.
+
 du -sh xem dung lượng của thư mục hiện tại
+
 du -ah xem chi tiết dung lượng của các thư mục con, và cả các file
+
 du -h --max-depth=1 xem dung lượng các thư mục con ở cấp 1 (ngay trong thư mục hiện tại)
+
 df kiểm tra dung lượng đĩa cứng, các phân vùng đĩa
+
 top hiển thị sự hoạt động của các tiến trình, đặc biệt là thông tin về tài nguyên hệ thống và việc sử dụng các tài nguyên đó của từng tiến trình.
+
 vmstat 3 : kiểm soát hành vi của hệ thống
+
 vmstat -m : kiểm tra thông tin bộ nhớ
+
 shutdown, halt: Tắt hệ thống tại thời điểm yêu cầu
+
 pwd: hiển thị thư mục hiện tại
 
-add disk và cấu hình LVM
+---add disk và cấu hình LVM
 -cấu trúc LVM
 
 cài đặt LVM:
