@@ -117,11 +117,17 @@ Chức năng
 -cấu trúc LVM
 
 ![image1](https://user-images.githubusercontent.com/74639473/99750706-760f0180-2b13-11eb-8e90-d512a2136c35.png)
+
 cài đặt LVM:
+
 add đĩa vào máy  ảo Centos
+
 ![image2](https://user-images.githubusercontent.com/74639473/99750733-7effd300-2b13-11eb-9c51-14dff14c4c7c.png)
+
 xem máy ảo đã nhận disk chưa : lsblk
+
 ![image3](https://user-images.githubusercontent.com/74639473/99750737-81622d00-2b13-11eb-9801-9a5a10ed2b66.png)
+
 Tạo các partition cho các ổ mới , bắt đầu từ sdb với lệnh :fdisk /dev/sdb
 
 
