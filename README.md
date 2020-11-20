@@ -1,4 +1,4 @@
-puri# REPORT 1
+# REPORT 1
 
 # 1.1. FILE SYSTEM CONFIGURATION
 
@@ -12,7 +12,7 @@ File system được dùng để quản lý các dữ liệu được đọc và
 
 	Filesystem mục đích đặc biệt: procfs, sysfs, tmpfs, squashfs, debugfs,…
 
-<img src="https://Users/ADMIN/AppData/Local/Temp/Rar$EXa12696.20292/images/image9.png" alt="trd" width="250" />
+<img src="https://github.com/bac123abc/-Lunux/issues/2#issue-747078685" alt="" width="250" />
 
 --- Thư mục
 
