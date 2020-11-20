@@ -54,41 +54,41 @@ Chức năng
 	/proc
 	Sử dụng cho nhân Linux. Chúng được sử dụng bởi nhân để xuất dữ liệu sang không gian người dùng.
 
-thông tin về hệ thống
+# thông tin về hệ thống
 
-cat /proc/cpuinfo hiển thị thông tin CPU
+	cat /proc/cpuinfo hiển thị thông tin CPU
 
-cat /proc/meminfo hiển thị thông tin về RAM đang sử dụng
+	cat /proc/meminfo hiển thị thông tin về RAM đang sử dụng
 
-cat /proc/version hiển thị phiên bản của kernel
+	cat /proc/version hiển thị phiên bản của kernel
 
-cat /etc/redhat-release hiển thị phiên bản Centos
+	cat /etc/redhat-release hiển thị phiên bản Centos
 
-uname -a hiển thị các thông tin về kernel
+	uname -a hiển thị các thông tin về kernel
 
-free -m hiển thị lượng RAM còn trống
+	free -m hiển thị lượng RAM còn trống
 
-df -h hiển thị thông tin những file hệ thống nơi mỗi file thường trú hoặc tất cả những file mặc định và lệnh này có thể xem được dung lượng ổ cứng đã sử dụng và còn trống bao nhiêu.
+	df -h hiển thị thông tin những file hệ thống nơi mỗi file thường trú hoặc tất cả những file mặc định và lệnh này có thể xem được dung lượng ổ cứng đã sử dụng và còn trống bao nhiêu.
 
-du -sh xem dung lượng của thư mục hiện tại
+	du -sh xem dung lượng của thư mục hiện tại
 
-du -ah xem chi tiết dung lượng của các thư mục con, và cả các file
+	du -ah xem chi tiết dung lượng của các thư mục con, và cả các file
 
-du -h --max-depth=1 xem dung lượng các thư mục con ở cấp 1 (ngay trong thư mục hiện tại)
+	du -h --max-depth=1 xem dung lượng các thư mục con ở cấp 1 (ngay trong thư mục hiện tại)
 
-df kiểm tra dung lượng đĩa cứng, các phân vùng đĩa
+	df kiểm tra dung lượng đĩa cứng, các phân vùng đĩa
 
-top hiển thị sự hoạt động của các tiến trình, đặc biệt là thông tin về tài nguyên hệ thống và việc sử dụng các tài nguyên đó của từng tiến trình.
+	top hiển thị sự hoạt động của các tiến trình, đặc biệt là thông tin về tài nguyên hệ thống và việc sử dụng các tài nguyên đó của từng tiến trình.
 
-vmstat 3 : kiểm soát hành vi của hệ thống
+	vmstat 3 : kiểm soát hành vi của hệ thống
 
-vmstat -m : kiểm tra thông tin bộ nhớ
+	vmstat -m : kiểm tra thông tin bộ nhớ
 
-shutdown, halt: Tắt hệ thống tại thời điểm yêu cầu
+	shutdown, halt: Tắt hệ thống tại thời điểm yêu cầu
 
-pwd: hiển thị thư mục hiện tại
+	pwd: hiển thị thư mục hiện tại
 
----add disk và cấu hình LVM
+#  add disk và cấu hình LVM
 -cấu trúc LVM
 
 cài đặt LVM:
@@ -97,49 +97,56 @@ add đĩa vào máy  ảo Centos
 xem máy ảo đã nhận disk chưa : lsblk
 Tạo các partition cho các ổ mới , bắt đầu từ sdb với lệnh :fdisk /dev/sdb
 
-Tạo Physical Volume :pvcreate /dev/sdb1
-tạo Volume Group :vgcreate vg-demo1 /dev/sdb1 /dev/sdc1
-tạo logical Volume: lvcreate -L 1G -n lv-demo1 vg-demo1
+	Tạo Physical Volume :pvcreate /dev/sdb1
+	tạo Volume Group :vgcreate vg-demo1 /dev/sdb1 /dev/sdc1
+	tạo logical Volume: lvcreate -L 1G -n lv-demo1 vg-demo1
 
 
-1.2. USER ACCOUNT MANAGEMENT
+# 1.2. USER ACCOUNT MANAGEMENT
 Files used in creating a user
-tập tin /etc/passwd:  là csdl các tài khoản người dùng trên Linux dưới dạng văn bản: xem thông tin file /etc/passwd : cat /etc/passwd
-tập tin /etc/shadow: là nơi lưu trữ mật khẩu đã được mã hóa.xem thông tin file /etc/shadow là cat /etc/shadow
-tập tin /etc/group là nơi lưu thông tin các nhóm
--tạo người dùng và mật khẩu: 
+	tập tin /etc/passwd:  là csdl các tài khoản người dùng trên Linux dưới dạng văn bản: xem thông tin file /etc/passwd : cat /etc/passwd
+	tập tin /etc/shadow: là nơi lưu trữ mật khẩu đã được mã hóa.xem thông tin file /etc/shadow là cat /etc/shadow
+	tập tin /etc/group là nơi lưu thông tin các nhóm
+	-tạo người dùng và mật khẩu: 
 
-tạo Group: groupadd  group
+	tạo Group: groupadd  group
 
-add user vào group : usermod - g group user
+	add user vào group : usermod - g group user
 
-chown ,chmod 
+	chown ,chmod 
 
 
 Lenh sudo 
-cho phép một số user được định nghĩa trong file cấu hình /etc/sudoers có thể chạy một số câu lệnh xác định với quyền hạn root hoặc với quyền hạn của một user khác. khi sử dụng sudo thì yêu cầu nhập password trước khi thực hiện. các lệnh sudo sẽ ghi log lại trong file var/log/messages
+	cho phép một số user được định nghĩa trong file cấu hình /etc/sudoers có thể chạy một số câu lệnh xác định với quyền hạn root hoặc với quyền hạn của một user khác. khi sử dụng sudo thì yêu cầu nhập password trước khi thực hiện. các lệnh sudo sẽ ghi log lại trong file var/log/messages
 
-1.3. PACKAGE MANAGEMENT
- Xem cu phap lenh rpm: man rpm
+# 1.3. PACKAGE MANAGEMENT
+# Xem cu phap lenh rpm: man rpm
 cài đặt gói: rpm -ivh <tap tin.rpm>
+	
 thông tin  tập tin của 1 gói: rpm -qpl <tập tin rpm>
+
 xóa một gói :rpm -e <tên gói>
+
 thông tin về gói : rpm -qpi <tên gói>
+
 liệt kê ds các gói đã cài đặt : rpm -qa
+
 kiểm tra gói : rpm -q
+
 liên kết ds tập tin của 1 gói: rpm -ql <tên gói>
+
 cho biết tập tin thuộc gói nào : rpm -qf <tập tin>
 
 Sử dụng yum để cài đặt gói
-cài đặt gói mc
+	cài đặt gói mc
 
-xem thông tin gói mc
+	xem thông tin gói mc
 
-xem một số thông tin 
+	xem một số thông tin 
 
 
-update : yum update
-liệt kê ds đã cài: yum list install
+	update : yum update
+	liệt kê ds đã cài: yum list install
 
 
 
@@ -149,32 +156,32 @@ liệt kê ds đã cài: yum list install
 
 		
 
-REPORT 2
+# REPORT 2
 
-2.1. SYSTEM STARTUP AND SHUTDOWN
-Quá trình khởi tạo hệ thống
-Linux boot process là quá trình khởi tạo hệ thống Linux. Nó bao bước từ khi ta bật máy đến khi giao diện người dùng sẵn sàng.
-Khi bật máy tính, quá trình khởi động sẽ được thực hiện theo các bước dưới đây:BIOS thực hiện kiểm tra tính toàn vẹn trên bộ nhớ và tìm kiếm các chỉ dẫn trên MBR.MBR nạp trình quản lý khởi động LILO hoặc GRUB.LILO/GRUB sẽ nhận diện kernel hệ điều hành và nạp nhân hệ điều hành từ /boot.Nhân hệ điều hành chuyển quyền điều khiển cho chương trình /sbin/init.Dựa trên mức hoạt động tương ứng, /sbin/init thực hiện nạp các dịch vụ và gắn kết (mount) tất cả các phần chia của hệ thống (trong /etc/fstab)
-Tiến trình init: Các bước khởi động của init
-Đầu tiên, init gọi thi hành /etc/rc.d/rc.sysinit để thiết lập đường dẫn, kiểm tra các hệ thống tập tin v.v…
-Kế tiếp, init sẽ thực thi /etc/inittab (mô tả các mức thi hành).
-Init gọi thi hành script /etc/rc.d/init.d/functions cho biết các khởi động hay ngừng một chương trình và cách xác định PID của một chương trình.
-Tiếp tục, init khởi động các tiến trình ngầm nằm trong các thư mục /etc/rc.d/rc0.d/, /etc/rc.d/rc1.d/…
-Gọi thi hành /etc/rc.d/rc.local: bổ sung thêm các lệnh cần thiết.
-Sau khi init đã xử lý tất cả các mức thi hành, script /etc/inittab phát sinh một tiến trình getty cho mỗi virtual console cho mỗi mức thi hành.
-khung tập lệnh
+# 2.1. SYSTEM STARTUP AND SHUTDOWN
+# Quá trình khởi tạo hệ thống
+	Linux boot process là quá trình khởi tạo hệ thống Linux. Nó bao bước từ khi ta bật máy đến khi giao diện người dùng sẵn sàng.
+	Khi bật máy tính, quá trình khởi động sẽ được thực hiện theo các bước dưới đây:BIOS thực hiện kiểm tra tính toàn vẹn trên bộ nhớ và tìm kiếm các chỉ dẫn trên MBR.MBR nạp trình quản lý khởi động LILO hoặc GRUB.LILO/GRUB sẽ nhận diện kernel hệ điều hành và nạp nhân hệ điều hành từ /boot.Nhân hệ điều hành chuyển quyền điều khiển cho chương trình /sbin/init.Dựa trên mức hoạt động tương ứng, /sbin/init thực hiện nạp các dịch vụ và gắn kết (mount) tất cả các phần chia của hệ thống (trong /etc/fstab)
+	Tiến trình init: Các bước khởi động của init
+	Đầu tiên, init gọi thi hành /etc/rc.d/rc.sysinit để thiết lập đường dẫn, kiểm tra các hệ thống tập tin v.v…
+	Kế tiếp, init sẽ thực thi /etc/inittab (mô tả các mức thi hành).
+	Init gọi thi hành script /etc/rc.d/init.d/functions cho biết các khởi động hay ngừng một chương trình và cách xác định PID của một chương trình.
+	Tiếp tục, init khởi động các tiến trình ngầm nằm trong các thư mục /etc/rc.d/rc0.d/, /etc/rc.d/rc1.d/…
+	Gọi thi hành /etc/rc.d/rc.local: bổ sung thêm các lệnh cần thiết.
+	Sau khi init đã xử lý tất cả các mức thi hành, script /etc/inittab phát sinh một tiến trình getty cho mỗi virtual console cho mỗi mức thi hành.
+	khung tập lệnh
 startx khởi động chế độ xwindows từ cửa sổ terminal
- quản lý các service
-service --status-all Kiểm tra tất cả các service và tình trạng của nó.
-service mysql stop shutdown dịch vụ mysql.
-service httpd start khởi động dịch vụ httpd.
-whereis mysql hiển thị nơi các file dịch vụ được cài đặt.
- service --status-all | grep abc, xem tình trạng của tiến trình abc
-service start | stop | restart
-/etc/init.d/ start | stop
- netstat - plnt kiểm tra xem các dịch vụ đang sử dụng cổng mạng nào có thể kết hợp với grep như sau
- netstat -plnt | grep :25 (Kiểm tra xem dịch vụ nào đang sử dụng cổng 25)
-2.2. PROCESS MONITORING AND SCHEDULING
+ # quản lý các service
+	service --status-all Kiểm tra tất cả các service và tình trạng của nó.
+	service mysql stop shutdown dịch vụ mysql.
+	service httpd start khởi động dịch vụ httpd.
+	whereis mysql hiển thị nơi các file dịch vụ được cài đặt.
+	 service --status-all | grep abc, xem tình trạng của tiến trình abc
+	service start | stop | restart
+	/etc/init.d/ start | stop
+	 netstat - plnt kiểm tra xem các dịch vụ đang sử dụng cổng mạng nào có thể kết hợp với grep như sau
+	 netstat -plnt | grep :25 (Kiểm tra xem dịch vụ nào đang sử dụng cổng 25)
+# 2.2. PROCESS MONITORING AND SCHEDULING
 theo dõi các tiến trình 
 xem thong tin tiến trình : ps -ax 
 
