@@ -1,9 +1,5 @@
 # REPORT 1
-![image1](https://user-images.githubusercontent.com/74639473/99750706-760f0180-2b13-11eb-8e90-d512a2136c35.png)
-![image2](https://user-images.githubusercontent.com/74639473/99750733-7effd300-2b13-11eb-9c51-14dff14c4c7c.png)
-![image3](https://user-images.githubusercontent.com/74639473/99750737-81622d00-2b13-11eb-9801-9a5a10ed2b66.png)
-![image4](https://user-images.githubusercontent.com/74639473/99750746-832bf080-2b13-11eb-97f5-6d2fceb40db8.png)
-![image5](https://user-images.githubusercontent.com/74639473/99750791-96d75700-2b13-11eb-89f1-ea47dfaeaf5c.png)
+
 ![image6](https://user-images.githubusercontent.com/74639473/99750798-98a11a80-2b13-11eb-8892-f634d285dc33.png)
 ![image7](https://user-images.githubusercontent.com/74639473/99750800-9a6ade00-2b13-11eb-922c-7c05bf714f49.png)
 ![image8](https://user-images.githubusercontent.com/74639473/99750805-9c34a180-2b13-11eb-8adc-e4ac56e1c284.png)
@@ -119,12 +115,15 @@ Chức năng
 
 #  add disk và cấu hình LVM
 -cấu trúc LVM
-<img src=" alt="" width="250" />
+
+![image1](https://user-images.githubusercontent.com/74639473/99750706-760f0180-2b13-11eb-8e90-d512a2136c35.png)
 cài đặt LVM:
 add đĩa vào máy  ảo Centos
-
+![image2](https://user-images.githubusercontent.com/74639473/99750733-7effd300-2b13-11eb-9c51-14dff14c4c7c.png)
 xem máy ảo đã nhận disk chưa : lsblk
+![image3](https://user-images.githubusercontent.com/74639473/99750737-81622d00-2b13-11eb-9801-9a5a10ed2b66.png)
 Tạo các partition cho các ổ mới , bắt đầu từ sdb với lệnh :fdisk /dev/sdb
+
 
 	Tạo Physical Volume :pvcreate /dev/sdb1
 	tạo Volume Group :vgcreate vg-demo1 /dev/sdb1 /dev/sdc1
