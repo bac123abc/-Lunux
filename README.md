@@ -160,17 +160,19 @@ Sử dụng yum để cài đặt gói
 
 # 2.1. SYSTEM STARTUP AND SHUTDOWN
 # Quá trình khởi tạo hệ thống
-	Linux boot process là quá trình khởi tạo hệ thống Linux. Nó bao bước từ khi ta bật máy đến khi giao diện người dùng sẵn sàng.
-	Khi bật máy tính, quá trình khởi động sẽ được thực hiện theo các bước dưới đây:BIOS thực hiện kiểm tra tính toàn vẹn trên bộ nhớ và tìm kiếm các chỉ dẫn trên MBR.MBR nạp trình quản lý khởi động LILO hoặc GRUB.LILO/GRUB sẽ nhận diện kernel hệ điều hành và nạp nhân hệ điều hành từ /boot.Nhân hệ điều hành chuyển quyền điều khiển cho chương trình /sbin/init.Dựa trên mức hoạt động tương ứng, /sbin/init thực hiện nạp các dịch vụ và gắn kết (mount) tất cả các phần chia của hệ thống (trong /etc/fstab)
-	Tiến trình init: Các bước khởi động của init
+Linux boot process là quá trình khởi tạo hệ thống Linux. Nó bao bước từ khi ta bật máy đến khi giao diện người dùng sẵn sàng.
+
+Khi bật máy tính, quá trình khởi động sẽ được thực hiện theo các bước dưới đây:BIOS thực hiện kiểm tra tính toàn vẹn trên bộ nhớ và tìm kiếm các chỉ dẫn trên MBR.MBR nạp trình quản lý khởi động LILO hoặc GRUB.LILO/GRUB sẽ nhận diện kernel hệ điều hành và nạp nhân hệ điều hành từ /boot.Nhân hệ điều hành chuyển quyền điều khiển cho chương trình /sbin/init.Dựa trên mức hoạt động tương ứng, /sbin/init thực hiện nạp các dịch vụ và gắn kết (mount) tất cả các phần chia của hệ thống (trong /etc/fstab)
+
+Tiến trình init: Các bước khởi động của init
 	Đầu tiên, init gọi thi hành /etc/rc.d/rc.sysinit để thiết lập đường dẫn, kiểm tra các hệ thống tập tin v.v…
 	Kế tiếp, init sẽ thực thi /etc/inittab (mô tả các mức thi hành).
 	Init gọi thi hành script /etc/rc.d/init.d/functions cho biết các khởi động hay ngừng một chương trình và cách xác định PID của một chương trình.
 	Tiếp tục, init khởi động các tiến trình ngầm nằm trong các thư mục /etc/rc.d/rc0.d/, /etc/rc.d/rc1.d/…
 	Gọi thi hành /etc/rc.d/rc.local: bổ sung thêm các lệnh cần thiết.
 	Sau khi init đã xử lý tất cả các mức thi hành, script /etc/inittab phát sinh một tiến trình getty cho mỗi virtual console cho mỗi mức thi hành.
-	khung tập lệnh
-startx khởi động chế độ xwindows từ cửa sổ terminal
+# khung tập lệnh
+	startx khởi động chế độ xwindows từ cửa sổ terminal
  # quản lý các service
 	service --status-all Kiểm tra tất cả các service và tình trạng của nó.
 	service mysql stop shutdown dịch vụ mysql.
@@ -182,57 +184,68 @@ startx khởi động chế độ xwindows từ cửa sổ terminal
 	 netstat - plnt kiểm tra xem các dịch vụ đang sử dụng cổng mạng nào có thể kết hợp với grep như sau
 	 netstat -plnt | grep :25 (Kiểm tra xem dịch vụ nào đang sử dụng cổng 25)
 # 2.2. PROCESS MONITORING AND SCHEDULING
-theo dõi các tiến trình 
-xem thong tin tiến trình : ps -ax 
+# theo dõi các tiến trình 
+	xem tiến trình cha con: ps -ef |more
+	xem tiến trình theo cấu trúc : pstree -np | more
+	xem tiến trình user khởi tạo: ps -u user
+	hủy tiến trình: pkill pid
+	hủy tiến trình theo tên : pkill name
 
-xem tiến trình cha con: ps -ef |more
-xem tiến trình theo cấu trúc : pstree -np | more
-xem tiến trình user khởi tạo: ps -u user
-hủy tiến trình: pkill pid
-hủy tiến trình theo tên : pkill name
 
-Shared Library
+# Shared Library
 Library là file chứa các đoạn mã lệnh và dữ liệu được tổ chức thành các hàm (subroutine), các lớp (class) nhằm cung cấp dịch vụ, chức năng nào đó cho các chương trình chạy trên máy tính.
+
 xác định các library cần thiết cho 1 chương trình.
-# ldd program1, program2
+	ldd program1, program2
 
 tạo index cho các  shared library
+
 Các library được đặt trong các thư mục như /lib, /usr/lib, /usr/local/lib. Để hướng dẫn cho ld.so tìm kiếm library trong các thư mục này cũng như là các thư mục khác thì có 2 cách:
+
 1.thêm danh sách các thư mục đó vào biên môi trường shell là LD_LIBRARY_PATH
+
 2. tạo index gồm tên các library và thư mục lưu trữ chúng. File /etc/ld.so.cache chứa thông tin index này
+
 thêm các index vào library
-# ldconfig [options] /lib_dirs
-trong đó options gồm -p hoặc -v 
-# ldconfig -v /lib_dirs
 
-Để xem nội dung của ld.so.cache: # ldconfig -p
+	ldconfig [options] /lib_dirs
+	trong đó options gồm -p hoặc -v 
+	ldconfig -v /lib_dirs
 
-Tìm kiếm một library trong cache: # ldconfig -p | grep ncurses
+	Để xem nội dung của ld.so.cache: # ldconfig -p
+
+	Tìm kiếm một library trong cache: # ldconfig -p | grep ncurses
 
 Scheduling processes with cron
+
 Cron là một tiện ích giúp lập lịch chạy những dòng lệnh bên phía server để thực thi một hoặc nhiều công việc nào đó theo thời gian được lập sẵn. Một số người gọi những công việc đó là Cron job hoặc Cron task
-2.3 Cấu hình SSH
+
+# 2.3 Cấu hình SSH
 kiểm tra đã cấu hình SSH chưa: service sshd restart
+
 cài đặt ssh: yum install openssh-server -y
+
 cài đặt mobaXterm
-thực hiện ssh trên mobaXterm
 
-/etc/ssh/sshd_config : Cấu hình OpenSSH Server
-/etc/ssh/ssh_config : Cấu hình OpenSSH Client
-~/.ssh/ : Thực mục SSH user
-~/.ssh/authorized_keys hoặc ~/.ssh/authorized_keys : Thư mục chứa public key (RSA hoặc DSA) dùng để cấu hình SSH auth
-/etc/nologin : Nếu file này tồn tại , SSH sẽ từ chối mọi user trừ root
-/etc/host.allow và /etc/hosts.deny : Thư mục Access List của SSH
-cấu hình ssh nâng cao
-- đổi  cổng port 22 thành 2222: vi /etc/ssh/sshd_config 
+# thực hiện ssh trên mobaXterm
 
-sau đó mở port trên iptable chuyển 22 thành 2222
-#service sshd restart
-#service iptable restart
-giới hạn số lần đăng nhập sai và phiên làm việc
+	/etc/ssh/sshd_config : Cấu hình OpenSSH Server
+	/etc/ssh/ssh_config : Cấu hình OpenSSH Client
+	~/.ssh/ : Thực mục SSH user
+	~/.ssh/authorized_keys hoặc ~/.ssh/authorized_keys : Thư mục chứa public key (RSA hoặc DSA) dùng để cấu hình SSH auth
+	/etc/nologin : Nếu file này tồn tại , SSH sẽ từ chối mọi user trừ root
+	/etc/host.allow và /etc/hosts.deny : Thư mục Access List của SSH
+#cấu hình ssh nâng cao
 
-sử dụng ssh Protocol 2
+	- đổi  cổng port 22 thành 2222: vi /etc/ssh/sshd_config 
 
-logout ssh nếu phiên đang nhàn rỗi
+	sau đó mở port trên iptable chuyển 22 thành 2222
+	#service sshd restart
+	#service iptable restart
+	giới hạn số lần đăng nhập sai và phiên làm việc
+
+	sử dụng ssh Protocol 2
+
+	logout ssh nếu phiên đang nhàn rỗi
 
 
